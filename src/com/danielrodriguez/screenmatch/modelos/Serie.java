@@ -8,8 +8,10 @@ public class Serie extends Titulo {
     private int episodiosPorTemporada;
     private int minutosPorEpisodio;
 
-    public Serie(String nombre, int fechaDeLanzamiento, int duracionEnMinutos, boolean incluidoEnElPlan) {
-        super(nombre, fechaDeLanzamiento, duracionEnMinutos, incluidoEnElPlan);
+    //Constructor super
+
+    public Serie(String nombre, int fechaDeLanzamiento, boolean incluidoEnElPlan) {
+        super(nombre, fechaDeLanzamiento, incluidoEnElPlan);
     }
 
     //Setters y getters
@@ -22,4 +24,9 @@ public class Serie extends Titulo {
 
     public void setMinutosPorEpisodio(int minutosPorEpisodio) { this.minutosPorEpisodio = minutosPorEpisodio; }
     public int getMinutosPorEpisodio() { return minutosPorEpisodio; }
+
+    @Override
+    public int getDuracionEnMinutos() {
+        return minutosPorEpisodio * episodiosPorTemporada * temporadas;
+    }
 }

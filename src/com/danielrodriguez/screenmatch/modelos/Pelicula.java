@@ -2,13 +2,21 @@ package com.danielrodriguez.screenmatch.modelos;
 
 public class Pelicula extends Titulo{
 
-    private String director;
+    //Atributos de pelicula
 
-    public Pelicula(String nombre, int fechaDeLanzamiento, int duracionEnMinutos, boolean incluidoEnElPlan) {
-        super(nombre, fechaDeLanzamiento, duracionEnMinutos, incluidoEnElPlan);
+    private String director;
+    private int duracionEnMinutos;
+
+    //Constructor super
+
+    public Pelicula(String nombre, int fechaDeLanzamiento, boolean incluidoEnElPlan) {
+        super(nombre, fechaDeLanzamiento, incluidoEnElPlan);
     }
 
-    public void setDirector(String director) { this.director = director; }
+    //setters y getters
 
+    public void setDirector(String director) { this.director = director; }
     public String getDirector() { return director; }
+
+
 }

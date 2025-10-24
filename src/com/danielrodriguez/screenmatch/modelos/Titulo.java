@@ -6,37 +6,32 @@ public class Titulo {
 
     private String nombre;
     private int fechaDeLanzamiento;
-    private int duracionEnMinutos;
     private boolean incluidoEnElPlan;
     private double sumaDeLasEvaluaciones;
     private int totalDeEvaluaciones;
+    private int duracionEnMinutos;
 
     //Constructor
 
-    public Titulo(String nombre, int fechaDeLanzamiento, int duracionEnMinutos, boolean incluidoEnElPlan){
+    public Titulo(String nombre, int fechaDeLanzamiento, boolean incluidoEnElPlan){
         this.nombre = nombre;
         this.fechaDeLanzamiento = fechaDeLanzamiento;
-        this.duracionEnMinutos = duracionEnMinutos;
-        this. incluidoEnElPlan = incluidoEnElPlan;
+        this.incluidoEnElPlan = incluidoEnElPlan;
     }
 
     //Setters y getters
 
     public void setNombre(String nombre) { this.nombre = nombre; }
-
     public String getNombre() { return nombre; }
 
     public void setFechaDeLanzamiento(int fechaDeLanzamiento) { this.fechaDeLanzamiento = fechaDeLanzamiento; }
-
     public int getFechaDeLanzamiento() { return fechaDeLanzamiento; }
 
-    public void setDuracionEnMinutos(int duracionEnMinutos) { this.duracionEnMinutos = duracionEnMinutos; }
-
-    public int getDuracionEnMinutos() { return duracionEnMinutos; }
-
     public void setIncluidoEnElPlan(boolean incluidoEnElPlan) { this.incluidoEnElPlan = incluidoEnElPlan; }
-
     public boolean getIncluidoEnElPlan() { return incluidoEnElPlan; }
+
+    public void setDuracionEnMinutos(int duracionEnMinutos) { this.duracionEnMinutos = duracionEnMinutos; }
+    public int getDuracionEnMinutos() { return duracionEnMinutos; }
 
     //Acciones o metodos
 
@@ -52,7 +47,7 @@ public class Titulo {
     public void muestraFichaTecnica(String tipoDetitulo){
         System.out.println("\nEl nombre de la " + tipoDetitulo + " es: " + nombre);
         System.out.println("Su fecha de lanzamiento es: " + fechaDeLanzamiento);
-        System.out.println("Duración en minutos: " + duracionEnMinutos);
+        System.out.println("Su duracion total en minutos es: " + getDuracionEnMinutos());
         System.out.println("Esta incluida en el plan: " + incluidoEnElPlan);
         System.out.printf(String.format("Su media de valoraciones es: %.1f\n", calculaLaMediaDeEvaluaciones()));
     }

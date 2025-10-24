@@ -1,21 +1,26 @@
 import com.danielrodriguez.screenmatch.modelos.Pelicula;
+import com.danielrodriguez.screenmatch.modelos.Serie;
 
 public class Main {
     public static void main(String[] args) {
 
-        Pelicula miPelicula = new Pelicula("Batman Begins", 2005, 140, true);
+        Pelicula miPelicula = new Pelicula("Batman Begins", 2005,  true);
+        miPelicula.setDuracionEnMinutos(140);
         miPelicula.evalua(10);
         miPelicula.evalua(8.5);
         miPelicula.evalua(9);
+        miPelicula.setDirector("Christopher Nolan");
         miPelicula.muestraFichaTecnica("pelicula");
 
         System.out.println("************************************");
 
-        Pelicula otraPelicula = new Pelicula("Spiderman", 2002, 126, false);
-        otraPelicula.evalua(10);
-        otraPelicula.evalua(9);
-        otraPelicula.evalua(10);
-        otraPelicula.muestraFichaTecnica("serie");
-
+        Serie miSerie = new Serie("Game of Thrones", 2011, true);
+        miSerie.setTemporadas(8);
+        miSerie.setEpisodiosPorTemporada(10);
+        miSerie.setMinutosPorEpisodio(50);
+        miSerie.evalua(10);
+        miSerie.evalua(7);
+        miSerie.evalua(8);
+        miSerie.muestraFichaTecnica("serie");
     }
 }
