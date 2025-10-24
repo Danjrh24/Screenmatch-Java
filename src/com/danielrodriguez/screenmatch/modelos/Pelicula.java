@@ -1,54 +1,14 @@
 package com.danielrodriguez.screenmatch.modelos;
 
-public class Pelicula {
+public class Pelicula extends Titulo{
 
-    //Atributos de peliculas
-    private String nombre;
-    private int fechaDeLanzamiento;
-    private int duracionEnMinutos;
-    private boolean incluidoEnElPlan;
-    private double sumaDeLasEvaluaciones;
-    private int totalDeEvaluaciones;
+    private String director;
 
-    //Constructor
-    public Pelicula(String nombre, int fechaDeLanzamiento, int duracionEnMinutos, boolean incluidoEnElPlan){
-        this.nombre = nombre;
-        this.fechaDeLanzamiento = fechaDeLanzamiento;
-        this.duracionEnMinutos = duracionEnMinutos;
-        this. incluidoEnElPlan = incluidoEnElPlan;
+    public Pelicula(String nombre, int fechaDeLanzamiento, int duracionEnMinutos, boolean incluidoEnElPlan) {
+        super(nombre, fechaDeLanzamiento, duracionEnMinutos, incluidoEnElPlan);
     }
 
-    public void setNombre(String nombre) { this.nombre = nombre; }
+    public void setDirector(String director) { this.director = director; }
 
-    public String getNombre() { return nombre; }
-
-    public void setFechaDeLanzamiento(int fechaDeLanzamiento) { this.fechaDeLanzamiento = fechaDeLanzamiento; }
-
-    public int getFechaDeLanzamiento() { return fechaDeLanzamiento; }
-
-    public void setDuracionEnMinutos(int duracionEnMinutos) { this.duracionEnMinutos = duracionEnMinutos; }
-
-    public int getDuracionEnMinutos() { return duracionEnMinutos; }
-
-    public void setIncluidoEnElPlan(boolean incluidoEnElPlan) { this.incluidoEnElPlan = incluidoEnElPlan; }
-
-    public boolean getIncluidoEnElPlan() { return incluidoEnElPlan; }
-
-
-    public void evalua(double nota){
-        sumaDeLasEvaluaciones += nota;
-        totalDeEvaluaciones++;
-    }
-
-    private double calculaLaMediaDeEvaluaciones(){
-        return sumaDeLasEvaluaciones / totalDeEvaluaciones;
-    }
-
-    public void muestraFichaTecnica(){
-        System.out.println("\nEl nombre de la pelicula es: " + nombre);
-        System.out.println("Su fecha de lanzamiento es: " + fechaDeLanzamiento);
-        System.out.println("Duración en minutos: " + duracionEnMinutos);
-        System.out.println("Esta incluida en el plan: " + incluidoEnElPlan);
-        System.out.printf(String.format("Su media de valoraciones es: %.1f\n", calculaLaMediaDeEvaluaciones()));
-    }
+    public String getDirector() { return director; }
 }

@@ -7,7 +7,7 @@ public class Main {
         miPelicula.evalua(10);
         miPelicula.evalua(8.5);
         miPelicula.evalua(9);
-        miPelicula.muestraFichaTecnica();
+        miPelicula.muestraFichaTecnica("pelicula");
 
         System.out.println("************************************");
 
@@ -15,7 +15,7 @@ public class Main {
         otraPelicula.evalua(10);
         otraPelicula.evalua(9);
         otraPelicula.evalua(10);
-        otraPelicula.muestraFichaTecnica();
+        otraPelicula.muestraFichaTecnica("serie");
 
     }
 }
