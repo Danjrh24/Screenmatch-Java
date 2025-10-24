@@ -1,3 +1,4 @@
+package com.danielrodriguez.screenmatch.modelos;
 
 public class Pelicula {
 

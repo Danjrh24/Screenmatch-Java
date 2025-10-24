@@ -1,3 +1,4 @@
+import com.danielrodriguez.screenmatch.modelos.Pelicula;
 
 public class Main {
     public static void main(String[] args) {
@@ -7,6 +8,14 @@ public class Main {
         miPelicula.evalua(8.5);
         miPelicula.evalua(9);
         miPelicula.muestraFichaTecnica();
+
+        System.out.println("************************************");
+
+        Pelicula otraPelicula = new Pelicula("Spiderman", 2002, 126, false);
+        otraPelicula.evalua(10);
+        otraPelicula.evalua(9);
+        otraPelicula.evalua(10);
+        otraPelicula.muestraFichaTecnica();
 
     }
 }
