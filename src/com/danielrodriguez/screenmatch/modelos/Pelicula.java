@@ -18,7 +18,8 @@ public class Pelicula extends Titulo implements Clasificacion {
     public void setDirector(String director) { this.director = director; }
     public String getDirector() { return director; }
 
-    //Metodos
+    //Acciones o metodos
+
     @Override
     public int getClasificacion() {
         return (int) calculaLaMediaDeEvaluaciones() / 2;

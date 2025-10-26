@@ -1,6 +1,7 @@
 package com.danielrodriguez.screenmatch.modelos;
+import com.danielrodriguez.screenmatch.calculos.Clasificacion;
 
-public class Serie extends Titulo {
+public class Serie extends Titulo implements Clasificacion {
 
     //Atributos de serie
 
@@ -25,8 +26,15 @@ public class Serie extends Titulo {
     public void setMinutosPorEpisodio(int minutosPorEpisodio) { this.minutosPorEpisodio = minutosPorEpisodio; }
     public int getMinutosPorEpisodio() { return minutosPorEpisodio; }
 
+    //Acciones o metodos
+
     @Override
     public int getDuracionEnMinutos() {
         return minutosPorEpisodio * episodiosPorTemporada * temporadas;
+    }
+
+    @Override
+    public int getClasificacion() {
+        return (int) calculaLaMediaDeEvaluaciones() / 2;
     }
 }
