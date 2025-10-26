@@ -1,3 +1,4 @@
+import com.danielrodriguez.screenmatch.calculos.CalculadoraDeTiempo;
 import com.danielrodriguez.screenmatch.modelos.Pelicula;
 import com.danielrodriguez.screenmatch.modelos.Serie;
 
@@ -10,7 +11,7 @@ public class Main {
         miPelicula.evalua(8.5);
         miPelicula.evalua(9);
         miPelicula.setDirector("Christopher Nolan");
-        miPelicula.muestraFichaTecnica("pelicula");
+        miPelicula.muestraFichaTecnica(miPelicula);
 
         System.out.println("************************************");
 
@@ -21,6 +22,15 @@ public class Main {
         miSerie.evalua(10);
         miSerie.evalua(7);
         miSerie.evalua(8);
-        miSerie.muestraFichaTecnica("serie");
+        miSerie.muestraFichaTecnica(miSerie);
+
+        System.out.println("\n**************************************\n");
+
+        CalculadoraDeTiempo calcularTiempoTotal = new CalculadoraDeTiempo();
+        calcularTiempoTotal.incluyeTitulo(miPelicula);
+        calcularTiempoTotal.incluyeTitulo(miSerie);
+        System.out.println("El tiempo total requerido para ver todos los contenidos es de " +
+                calcularTiempoTotal.getTiempoTotal() + " minutos");
+
     }
 }

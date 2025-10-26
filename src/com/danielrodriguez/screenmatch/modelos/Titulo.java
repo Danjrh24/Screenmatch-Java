@@ -44,11 +44,19 @@ public class Titulo {
         return sumaDeLasEvaluaciones / totalDeEvaluaciones;
     }
 
-    public void muestraFichaTecnica(String tipoDetitulo){
-        System.out.println("\nEl nombre de la " + tipoDetitulo + " es: " + nombre);
-        System.out.println("Su fecha de lanzamiento es: " + fechaDeLanzamiento);
-        System.out.println("Su duracion total en minutos es: " + getDuracionEnMinutos());
+    public void muestraFichaTecnica(Titulo titulo){
+        if(titulo.getClass().equals(Pelicula.class)){
+            System.out.println("\nNombre de la pelicula: " + nombre);
+            System.out.println("Director(a): " + ((Pelicula) titulo).getDirector());
+        }else if (titulo.getClass().equals(Serie.class)){
+            System.out.println("\nNombre de la serie: " + nombre);
+            System.out.println("Cantidad de temporadas: " + ((Serie) titulo).getTemporadas());
+            System.out.println("Cantidad de episodios por temporada: " + ((Serie) titulo).getEpisodiosPorTemporada());
+            System.out.println("Duracion de episodios en minutos: " + ((Serie) titulo).getMinutosPorEpisodio());
+        }
+        System.out.println("Fecha de lanzamiento: " + fechaDeLanzamiento);
+        System.out.println("Duracion total en minutos: " + getDuracionEnMinutos());
         System.out.println("Esta incluida en el plan: " + incluidoEnElPlan);
-        System.out.printf(String.format("Su media de valoraciones es: %.1f\n", calculaLaMediaDeEvaluaciones()));
+        System.out.printf(String.format("Media de valoraciones: %.1f\n", calculaLaMediaDeEvaluaciones()));
     }
 }

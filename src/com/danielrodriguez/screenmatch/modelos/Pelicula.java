@@ -5,7 +5,6 @@ public class Pelicula extends Titulo{
     //Atributos de pelicula
 
     private String director;
-    private int duracionEnMinutos;
 
     //Constructor super
 
