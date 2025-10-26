@@ -40,7 +40,7 @@ public class Titulo {
         totalDeEvaluaciones++;
     }
 
-    private double calculaLaMediaDeEvaluaciones(){
+    public double calculaLaMediaDeEvaluaciones(){
         return sumaDeLasEvaluaciones / totalDeEvaluaciones;
     }
 
