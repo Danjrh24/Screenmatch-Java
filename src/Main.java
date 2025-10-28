@@ -16,10 +16,9 @@ public class Main {
         miPelicula.evalua(8.5);
         miPelicula.evalua(9);
         miPelicula.setDirector("Christopher Nolan");
-        miPelicula.muestraFichaTecnica(miPelicula);
-        filtroRecomendacion.filtra(miPelicula);
+        miPelicula.muestraFichaTecnica(miPelicula, miPelicula);
 
-        System.out.println("************************************");
+        System.out.println("\n************************************\n");
 
         Serie miSerie = new Serie("Game of Thrones", 2011, true);
         miSerie.setTemporadas(8);
@@ -28,8 +27,7 @@ public class Main {
         miSerie.evalua(10);
         miSerie.evalua(7);
         miSerie.evalua(8);
-        miSerie.muestraFichaTecnica(miSerie);
-        filtroRecomendacion.filtra(miSerie);
+        miSerie.muestraFichaTecnica(miSerie, miSerie);
 
         System.out.println("\n**************************************\n");
 
@@ -38,9 +36,6 @@ public class Main {
         episodio1.setNombredeEpisodio("Winter is coming");
         episodio1.setLikes(500);
         episodio1.setNumeroDeEpisodio(1);
-        filtroRecomendacion.filtra(episodio1);
-        System.out.println("\n**************************************\n");
-
         calcularTiempoTotal.incluyeTitulo(miPelicula);
         calcularTiempoTotal.incluyeTitulo(miSerie);
         System.out.println("El tiempo total requerido para ver todos los contenidos es de " +

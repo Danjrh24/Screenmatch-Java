@@ -1,5 +1,8 @@
 package com.danielrodriguez.screenmatch.modelos;
 
+import com.danielrodriguez.screenmatch.calculos.Clasificacion;
+import com.danielrodriguez.screenmatch.calculos.FiltroRecomendacion;
+
 public class Titulo {
 
     //Atributos de titulo
@@ -10,6 +13,7 @@ public class Titulo {
     private double sumaDeLasEvaluaciones;
     private int totalDeEvaluaciones;
     private int duracionEnMinutos;
+    private FiltroRecomendacion filtroRecomendacion = new FiltroRecomendacion();
 
     //Constructor
 
@@ -44,7 +48,7 @@ public class Titulo {
         return sumaDeLasEvaluaciones / totalDeEvaluaciones;
     }
 
-    public void muestraFichaTecnica(Titulo titulo){
+    public void muestraFichaTecnica(Titulo titulo, Clasificacion clasificacion){
         if(titulo.getClass().equals(Pelicula.class)){
             System.out.println("\nNombre de la pelicula: " + nombre);
             System.out.println("Director(a): " + ((Pelicula) titulo).getDirector());
@@ -58,5 +62,6 @@ public class Titulo {
         System.out.println("Duracion total en minutos: " + getDuracionEnMinutos());
         System.out.println("Esta incluida en el plan: " + incluidoEnElPlan);
         System.out.printf(String.format("Media de valoraciones: %.1f\n", calculaLaMediaDeEvaluaciones()));
+        System.out.println(filtroRecomendacion.filtra(clasificacion));
     }
 }
