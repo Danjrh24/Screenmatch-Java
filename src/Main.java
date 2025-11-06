@@ -1,22 +1,25 @@
 import com.danielrodriguez.screenmatch.calculos.CalculadoraDeTiempo;
-import com.danielrodriguez.screenmatch.calculos.FiltroRecomendacion;
 import com.danielrodriguez.screenmatch.modelos.Episodio;
 import com.danielrodriguez.screenmatch.modelos.Pelicula;
 import com.danielrodriguez.screenmatch.modelos.Serie;
 
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
 
-        FiltroRecomendacion filtroRecomendacion = new FiltroRecomendacion();
         CalculadoraDeTiempo calcularTiempoTotal = new CalculadoraDeTiempo();
 
-        Pelicula miPelicula = new Pelicula("Batman Begins", 2005,  true);
-        miPelicula.setDuracionEnMinutos(140);
-        miPelicula.evalua(10);
-        miPelicula.evalua(8.5);
-        miPelicula.evalua(9);
-        miPelicula.setDirector("Christopher Nolan");
-        miPelicula.muestraFichaTecnica(miPelicula, miPelicula);
+        Pelicula pelicula_1 = new Pelicula("Batman Begins", 2005,  true);
+        pelicula_1.setDuracionEnMinutos(140);
+        pelicula_1.evalua(10);
+        pelicula_1.evalua(8.5);
+        pelicula_1.evalua(9);
+        pelicula_1.setDirector("Christopher Nolan");
+        pelicula_1.muestraFichaTecnica(pelicula_1, pelicula_1);
+
+        Pelicula pelicula_2 = new Pelicula("Transformers", 2007, true);
+        Pelicula pelicula_3 = new Pelicula("Avengers", 2012, true);
 
         System.out.println("\n************************************\n");
 
@@ -36,10 +39,19 @@ public class Main {
         episodio1.setNombredeEpisodio("Winter is coming");
         episodio1.setLikes(500);
         episodio1.setNumeroDeEpisodio(1);
-        calcularTiempoTotal.incluyeTitulo(miPelicula);
+        calcularTiempoTotal.incluyeTitulo(pelicula_1);
         calcularTiempoTotal.incluyeTitulo(miSerie);
         System.out.println("El tiempo total requerido para ver todos los contenidos es de " +
                 calcularTiempoTotal.getTiempoTotal() + " minutos");
+
+        ArrayList<Pelicula> listaDePeliculas = new ArrayList<>();
+        listaDePeliculas.add(pelicula_1);
+        listaDePeliculas.add(pelicula_2);
+        listaDePeliculas.add(pelicula_3);
+
+        System.out.println("Numero de peliculas: " + listaDePeliculas.size());
+        System.out.println("Primera pelicula: " + listaDePeliculas.getFirst().getNombre());
+        System.out.println("Ultima pelicula: " + listaDePeliculas.getLast().getNombre());
 
     }
 }
